@@ -1,0 +1,7 @@
+vm:
+    docker-devbox:
+        path: H:\Debian 10 Devbox\Clone of Debian 10.x 64-bit.vmx
+        type: vmware
+
+vmware:
+    vmrun: D:\VMware Workstation\vmrun.exe
