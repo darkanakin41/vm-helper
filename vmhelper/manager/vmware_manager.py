@@ -1,6 +1,6 @@
 import os
 
-from manager.a_manager import AManager
+from vmhelper.manager.a_manager import AManager
 
 
 class VmwareManager(AManager):

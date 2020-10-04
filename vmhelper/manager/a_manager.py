@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from config import configuration, vms
-from config.configuration import VMConfig
+from vmhelper.config import configuration, vms
+from vmhelper.config.configuration import VMConfig
 
 
 class AManager(ABC):

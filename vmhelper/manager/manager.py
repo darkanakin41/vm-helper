@@ -1,5 +1,5 @@
-from manager.vmware_manager import VmwareManager
-from manager.a_manager import AManager
+from vmhelper.manager.vmware_manager import VmwareManager
+from vmhelper.manager.a_manager import AManager
 
 class Manager:
 

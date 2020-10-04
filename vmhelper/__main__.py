@@ -3,8 +3,8 @@
 import argparse
 from typing import Optional, Sequence
 
-from config import vms
-from manager.manager import Manager
+from vmhelper.config import vms
+from vmhelper.manager.manager import Manager
 
 parser = argparse.ArgumentParser()
 parser.add_argument("name", help="The name of the project you want to create", type=str)
@@ -21,3 +21,10 @@ def main(args: Optional[Sequence[str]] = None):
 
     manager = Manager.get_manager(vm_config.type, vm_config.name)
     manager.run(action=argument.action)
+
+
+def console_script():  # pragma: no cover
+    """
+    Console script entrypoint
+    """
+    main()
