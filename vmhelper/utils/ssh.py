@@ -20,14 +20,13 @@ def try_ssh(hostname: str, port: int = 22, username: str = 'root', password: str
     ssh.load_system_host_keys()
     while retry < retries and not connected:
         try:
-            print('Trying ssh connection to {} : {} out of {} retries'.format(hostname, retry, retries))
+            print('[{}] Trying ssh connection : {} out of {} retries'.format(hostname, retry, retries))
             ssh.connect(hostname, port=port, username=username, password=password)
             connected = True
         except (BadHostKeyException, AuthenticationException, SSHException, socket.error) as e:
-            print(e)
             time.sleep(10)
         retry += 1
 
     if not connected:
-        raise Exception('Unable to connect to the machine after {} tries'.format(retry))
-    print('Connection to {} established after {} out of {} retries'.format(hostname, retry, retries))
+        raise Exception('[{}] Unable to connect to the machine after {} tries'.format(hostname, retry))
+    print('[{}] Connection established after {} out of {} retries'.format(hostname, retry, retries))

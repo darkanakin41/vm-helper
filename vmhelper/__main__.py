@@ -23,7 +23,7 @@ def main(args: Optional[Sequence[str]] = None):
     manager = Manager.get_manager(vm_config.type, vm_config.name)
     manager.run(action=argument.action)
 
-    if vm_config.hostname:
+    if vm_config.hostname and argument.action != 'stop':
         try_ssh(hostname=vm_config.hostname,
                 port=vm_config.port,
                 username=vm_config.ssh_username,
