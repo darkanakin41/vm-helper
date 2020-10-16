@@ -30,14 +30,32 @@ class VMConfig:
             return []
 
         vms = {}
-        for vmName in config.config.get('vm'):
-            c = config.config.get('vm').get(vmName)
-            vm = VMConfig(vmName, c.get('path'), c.get('type'))
-            vms[vmName] = vm
+        for vm_name in config.config.get('vm'):
+            c = config.config.get('vm').get(vm_name)
+            vm = VMConfig(vm_name,
+                          c.get('path'),
+                          c.get('type'),
+                          c.get('hostname'),
+                          c.get('port'),
+                          c.get('ssh_username'),
+                          c.get('ssh_password'),
+                          )
+            vms[vm_name] = vm
 
         return vms
 
-    def __init__(self, name: str, path: str, vmType: str):
+    def __init__(self,
+                 name: str,
+                 path: str,
+                 vm_type: str,
+                 hostname: str = None,
+                 port: int = None,
+                 ssh_username: str = None,
+                 ssh_password: str = None):
         self.name = name
         self.path = path
-        self.type = vmType
+        self.type = vm_type
+        self.hostname = hostname
+        self.port = port
+        self.ssh_username = ssh_username
+        self.ssh_password = ssh_password

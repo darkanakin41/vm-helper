@@ -2,6 +2,9 @@ vm:
     docker-devbox:
         path: H:\Debian 10 Devbox\Clone of Debian 10.x 64-bit.vmx
         type: vmware
+        ip: 192.168.200.100
+        user: devbox
+        password: devbox
 
 vmware:
     vmrun: D:\VMware Workstation\vmrun.exe
